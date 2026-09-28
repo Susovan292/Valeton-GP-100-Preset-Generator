@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GP-100 Tone Lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div>
+          <div class="brand">GP-100 <span>TONE LAB</span></div>
+          <div class="sub">
+            Song-to-patch &amp; guitar tone library • practical starting points
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" id="songTab">Song Match</button
+          ><button class="tab" id="libTab">Tone Library</button>
+        </div>
+      </header>
+
+      <section class="hero song">
+        <h1>Find the guitar tone</h1>
+        <p>
+          Enter a famous song and get a GP-100 signal-chain starting point with
+          actual model names, settings and knob values.
+        </p>
+        <div class="searchrow">
+          <input
+            id="search"
+            class="search"
+            placeholder="Try: Comfortably Numb, Sweet Child O' Mine, Sultans of Swing..."
+          /><button class="primary" onclick="matchSong()">MATCH TONE</button>
+        </div>
+      </section>
+
+      <section class="layout song">
+        <aside class="side">
+          <h3>Categories</h3>
+          <div class="chips" id="chips"></div>
+          <div class="footer" style="margin-top: 18px; text-align: left">
+            Select a category, then choose a song/patch. Settings stay hidden
+            until you open one.
+          </div>
+        </aside>
+        <main class="content">
+          <div id="browserView">
+            <div class="resulthead">
+              <div>
+                <span class="badge">PATCH LIBRARY</span>
+                <h2 id="browserTitle">Songs &amp; Patches</h2>
+                <div class="meta">
+                  Choose a patch to open its complete GP-100 signal chain and
+                  settings.
+                </div>
+              </div>
+            </div>
+            <div class="patchgrid" id="patchlist"></div>
+          </div>
+          <div id="detailView" class="hidden"></div>
+        </main>
+      </section>
+
+      <section class="layout library">
+        <aside class="side">
+          <h3>Categories</h3>
+          <div class="chips" id="libchips"></div>
+        </aside>
+        <main class="content"><div id="libraryGrid"></div></main>
+      </section>
+
+      <div class="footer">
+        Artist/song-inspired recipes are practical GP-100 starting points, not
+        official artist presets. Exact results vary with guitar, pickups,
+        strings, tuning, playing dynamics and monitoring setup.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
